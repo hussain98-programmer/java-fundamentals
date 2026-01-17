@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class BillAmount {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double discount;
+        double gross;
+
+        System.out.print("Enter the amount of the bill: ");
+        double bill = input.nextDouble();
+
+        if (bill <= 0) {
+            System.out.println("The bill amount should be more than zero!");
+        }
+        else if (bill <= 500) {
+            discount = 0;
+            gross = bill - discount;
+
+            System.out.printf("Bill amount = %.2f%n", bill);
+            System.out.printf("Discount amount = %.2f%n", discount);
+            System.out.printf("Gross amount after = %.2f%n", gross);
+        }
+        else if (bill <= 2000) {
+            discount = bill * 0.10;
+            gross = bill - discount;
+
+            System.out.printf("Bill amount = %.2f%n", bill);
+            System.out.printf("Discount amount = %.2f%n", discount);
+            System.out.printf("Gross amount after = %.2f%n", gross);
+        }
+        else {
+            discount = bill * 0.20;
+            gross = bill - discount;
+
+            System.out.printf("Bill amount = %.2f%n", bill);
+            System.out.printf("Discount amount = %.2f%n", discount);
+            System.out.printf("Gross amount after = %.2f%n", gross);
+        }
+
+        input.close();
+    }
+}
